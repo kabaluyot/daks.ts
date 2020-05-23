@@ -36,16 +36,15 @@ module.exports = {
       // enable the rule specifically for TypeScript files
       files: ['*.ts', '*.tsx', '*.vue'],
       rules: {
-        '@typescript-eslint/explicit-function-return-type': [
-          'error'
-        ]
+        '@typescript-eslint/explicit-function-return-type': ['error']
       }
     },
     {
-      // allow explicit any in these files
-      files: ['getters.ts', '*.api.ts'],
+      // allow explicit any in these files and missing return type
+      files: ['getters.ts', 'repository.ts', '*.repository.ts'],
       rules: {
-        '@typescript-eslint/no-explicit-any': 'off'
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/explicit-function-return-type': ['off']
       }
     }
   ]
