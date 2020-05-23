@@ -65,6 +65,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import { Logo, VuetifyLogo } from '~/components'
+import { CommentInterface } from '~/api/social'
 
 @Component({
   components: {
@@ -72,5 +73,28 @@ import { Logo, VuetifyLogo } from '~/components'
     VuetifyLogo
   }
 })
-export default class Index extends Vue {}
+export default class Index extends Vue {
+  $socialRepository!: {
+    GetComments: () => Promise<CommentInterface[]>
+  }
+
+  mounted(): void {
+    // GET https://jsonplaceholder.typicode.com/comments
+    this.getComments()
+  }
+
+  /**
+   * Get all coments
+   *
+   * @returns
+   */
+  async getComments(): Promise<void> {
+    try {
+      const response = await this.$socialRepository.GetComments()
+      console.log('RESPONSE', response)
+    } catch (err) {
+      console.log('ERROR', err)
+    }
+  }
+}
 </script>
