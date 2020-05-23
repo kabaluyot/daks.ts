@@ -8,6 +8,10 @@
 # install dependencies
 $ npm install
 
+# run lints
+$ npm run lint
+$ npm run lint:fix
+
 # serve with hot reload at localhost:3000
 $ npm run dev
 
