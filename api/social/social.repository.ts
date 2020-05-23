@@ -9,8 +9,8 @@ export default ($axios: AxiosInstance) => ({
    *
    * @return {Promise}
    */
-  async GetComments(): Promise<CommentInterface[]> {
-    return await $axios
+  GetComments(): Promise<CommentInterface[]> {
+    return $axios
       .get(`${API_URL}`)
       .then((response: AxiosResponse<CommentInterface[]>) => {
         const { data } = response
