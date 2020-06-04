@@ -2,6 +2,13 @@
   <img class="VuetifyLogo" alt="Vuetify Logo" src="/vuetify-logo.svg" />
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class VuetifyLogo extends Vue {}
+</script>
+
 <style>
 .VuetifyLogo {
   height: 180px;
