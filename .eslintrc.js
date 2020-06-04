@@ -41,7 +41,7 @@ module.exports = {
     },
     {
       // allow explicit any in these files and missing return type
-      files: ['getters.ts', 'repository.ts', '*.repository.ts'],
+      files: ['getters.ts', 'repository.ts', '*.repository.ts', 'test/**/*'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/explicit-function-return-type': ['off']
