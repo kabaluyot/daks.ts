@@ -63,8 +63,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, namespace } from 'nuxt-property-decorator'
 import { Logo, VuetifyLogo } from '~/components'
+
+const GLOBAL_STORE = namespace('global')
 
 @Component({
   components: {
@@ -73,10 +75,7 @@ import { Logo, VuetifyLogo } from '~/components'
   }
 })
 export default class Index extends Vue {
-  mounted(): void {
-    // GET https://jsonplaceholder.typicode.com/comments
-    this.getComments()
-  }
+  @GLOBAL_STORE.Action('setTitle') global_set_title!: (payload: string) => void
 
   /**
    * Get all coments
@@ -90,6 +89,14 @@ export default class Index extends Vue {
     } catch (err) {
       console.log('ERROR', err)
     }
+  }
+
+  mounted(): void {
+    // GET https://jsonplaceholder.typicode.com/comments
+    this.getComments()
+
+    // mutate in vuex
+    this.global_set_title('Hello from daks.ts')
   }
 }
 </script>
