@@ -29,7 +29,9 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 0,
     '@typescript-eslint/ban-ts-ignore': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off', // disable default
-    '@typescript-eslint/no-explicit-any': 'error'
+    '@typescript-eslint/no-explicit-any': 'error',
+    camelcase: 'off',
+    '@typescript-eslint/camelcase': ['warn']
   },
   overrides: [
     {
