@@ -13,3 +13,19 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script lang="ts">
+import { Component, Vue, namespace } from 'nuxt-property-decorator'
+
+const GLOBAL_STORE = namespace('global')
+
+@Component
+export default class Inspire extends Vue {
+  @GLOBAL_STORE.Getter('getCapitalizedTitle')
+  global_get_capitzalied_title!: string
+
+  mounted(): void {
+    console.log('FROM VUEX', this.global_get_capitzalied_title)
+  }
+}
+</script>
