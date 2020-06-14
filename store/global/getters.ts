@@ -1,9 +1,9 @@
 import { GetterTree } from 'vuex'
-import State from './state'
+import { StateInterface } from './state.types'
 
-const Getters: GetterTree<typeof State, () => any> = {
-  getCapitalizedTitle(State): string {
-    return State.title.toUpperCase()
+const Getters: GetterTree<StateInterface, () => any> = {
+  getCapitalizedTitle(state): string {
+    return state.title.toUpperCase()
   }
 }
 

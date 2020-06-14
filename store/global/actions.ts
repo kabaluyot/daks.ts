@@ -1,7 +1,7 @@
 import { ActionTree } from 'vuex'
-import State from './state'
+import { StateInterface } from './state.types'
 
-const Actions: ActionTree<typeof State, () => void> = {
+const Actions: ActionTree<StateInterface, () => void> = {
   setTitle(context, payload: string) {
     context.commit('SET_TITLE', payload)
   }
