@@ -22,10 +22,10 @@ const GLOBAL_STORE = namespace('global')
 @Component
 export default class Inspire extends Vue {
   @GLOBAL_STORE.Getter('getCapitalizedTitle')
-  global_get_capitzalied_title!: string
+  global_get_capitalized_title!: string
 
   mounted(): void {
-    console.log('FROM VUEX', this.global_get_capitzalied_title)
+    console.log('FROM VUEX', this.global_get_capitalized_title)
   }
 }
 </script>
