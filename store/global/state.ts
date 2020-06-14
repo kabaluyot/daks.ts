@@ -4,4 +4,4 @@ const State: StateInterface = {
   title: ''
 }
 
-export default State
+export default () => State
