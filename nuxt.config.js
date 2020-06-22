@@ -19,6 +19,38 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.APP_DESCRIPTION || ''
+      },
+      // OG Tag setup
+      // https://vue-meta.nuxtjs.org/api/#meta
+      {
+        property: 'og:type',
+        content: 'website',
+        vmid: 'og:type'
+      },
+      {
+        property: 'og:title',
+        content: process.env.APP_NAME,
+        vmid: 'og:title'
+      },
+      {
+        property: 'og:description',
+        content: process.env.APP_DESCRIPTION,
+        vmid: 'og:description'
+      },
+      {
+        property: 'og:site_name',
+        content: process.env.APP_URL,
+        vmid: 'og:site_name'
+      },
+      {
+        property: 'og:url',
+        content: process.env.APP_URL,
+        vmid: 'og:url'
+      },
+      {
+        property: 'og:image',
+        content: process.env.APP_URL + '/icon.png',
+        vmid: 'og:image'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -58,7 +90,30 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    debug: process.env.NODE_ENV !== 'production',
+    headers: {
+      common: {
+        Accept: 'application/json, text/plain, */*'
+      }
+    }
+  },
+  /**
+   *  PWA module configuration
+   *  https://pwa.nuxtjs.org/setup.html
+   */
+  pwa: {
+    meta: {
+      title: process.env.APP_NAME
+    },
+    manifest: {
+      name: process.env.APP_NAME,
+      short_name: process.env.APP_NAME,
+      description: process.env.APP_DESCRIPTION,
+      start_url: process.env.APP_URL,
+      lang: 'en'
+    }
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
