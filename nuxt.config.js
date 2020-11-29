@@ -1,10 +1,10 @@
 require('dotenv').config()
 
 export default {
-  mode: 'universal',
+  ssr: true,
   server: {
     port: process.env.APP_PORT,
-    host: process.env.APP_HOST
+    host: process.env.APP_HOST,
   },
   /*
    ** Headers of the page
@@ -18,42 +18,42 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.APP_DESCRIPTION || ''
+        content: process.env.APP_DESCRIPTION || '',
       },
       // OG Tag setup
       // https://vue-meta.nuxtjs.org/api/#meta
       {
         property: 'og:type',
         content: 'website',
-        vmid: 'og:type'
+        vmid: 'og:type',
       },
       {
         property: 'og:title',
         content: process.env.APP_NAME,
-        vmid: 'og:title'
+        vmid: 'og:title',
       },
       {
         property: 'og:description',
         content: process.env.APP_DESCRIPTION,
-        vmid: 'og:description'
+        vmid: 'og:description',
       },
       {
         property: 'og:site_name',
         content: process.env.APP_URL,
-        vmid: 'og:site_name'
+        vmid: 'og:site_name',
       },
       {
         property: 'og:url',
         content: process.env.APP_URL,
-        vmid: 'og:url'
+        vmid: 'og:url',
       },
       {
         property: 'og:image',
         content: process.env.APP_URL + '/icon.png',
-        vmid: 'og:image'
-      }
+        vmid: 'og:image',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -74,7 +74,7 @@ export default {
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
   ],
   /*
    ** Nuxt.js modules
@@ -84,7 +84,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Axios module configuration
@@ -94,9 +94,9 @@ export default {
     debug: process.env.NODE_ENV !== 'production',
     headers: {
       common: {
-        Accept: 'application/json, text/plain, */*'
-      }
-    }
+        Accept: 'application/json, text/plain, */*',
+      },
+    },
   },
   /**
    *  PWA module configuration
@@ -104,15 +104,15 @@ export default {
    */
   pwa: {
     meta: {
-      title: process.env.APP_NAME
+      title: process.env.APP_NAME,
     },
     manifest: {
       name: process.env.APP_NAME,
       short_name: process.env.APP_NAME,
       description: process.env.APP_DESCRIPTION,
       start_url: process.env.APP_URL,
-      lang: 'en'
-    }
+      lang: 'en',
+    },
   },
   /*
    ** vuetify module configuration
@@ -120,6 +120,6 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    optionsPath: './vuetify.options.js'
-  }
+    optionsPath: './vuetify.options.js',
+  },
 }

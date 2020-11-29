@@ -41,18 +41,16 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <v-container>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-item @click.native="right = !right">
           <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
+            <v-icon light> mdi-repeat </v-icon>
           </v-list-item-action>
           <v-list-item-title>Switch drawer (click me)</v-list-item-title>
         </v-list-item>
@@ -83,13 +81,13 @@ export default class Default extends Vue {
     {
       icon: 'mdi-apps',
       title: 'Welcome',
-      to: '/'
+      to: '/',
     },
     {
       icon: 'mdi-chart-bubble',
       title: 'Inspire',
-      to: '/inspire'
-    }
+      to: '/inspire',
+    },
   ]
 
   miniVariant: boolean = false
