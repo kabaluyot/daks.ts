@@ -28,6 +28,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@types/jest": "^26.0.15",
+    "babel-core": "^7.0.0-bridge.0",
     "nuxt": "^2.13.0",
     "nuxt-property-decorator": "^2.7.2"
   },
