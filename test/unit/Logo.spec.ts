@@ -12,7 +12,7 @@ const factory = (computed = {}) => {
     mocks: {},
     stubs: {},
     methods: {},
-    computed
+    computed,
   })
 }
 

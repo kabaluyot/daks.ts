@@ -22,5 +22,5 @@ export default ($axios: AxiosInstance) => ({
       .catch((error: AxiosError) => {
         throw error
       })
-  }
+  },
 })
