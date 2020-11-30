@@ -24,3 +24,5 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [TypeScript Nuxt.js docs](https://typescript.nuxtjs.org/).
+
+Made with ❤️ at [Nuxify](https://nuxify.tech)
