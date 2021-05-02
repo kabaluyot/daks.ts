@@ -15,9 +15,7 @@ export default ($axios: AxiosInstance) => ({
       .then((response: AxiosResponse<CommentInterface[]>) => {
         const { data } = response
 
-        const comments: CommentInterface[] = data
-
-        return comments
+        return data
       })
       .catch((error: AxiosError) => {
         throw error

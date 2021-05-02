@@ -1,7 +1,6 @@
-require('dotenv').config()
-
 export default {
   ssr: true,
+  target: 'static',
   server: {
     port: process.env.APP_PORT,
     host: process.env.APP_HOST,
@@ -66,7 +65,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/repository', mode: 'client' }],
+  plugins: [{ src: '~/plugins/repository', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -83,9 +82,17 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
   ],
+  /**
+   * Public runtime configs
+   */
+  publicRuntimeConfig: {
+    appName: process.env.APP_NAME,
+  },
+  /**
+   * Private runtime configs
+   */
+  privateRuntimeConfig: {},
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
