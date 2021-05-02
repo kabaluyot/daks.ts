@@ -5,5 +5,8 @@ declare module 'vue/types/vue' {
     $socialRepository: {
       GetComments: () => Promise<CommentInterface[]>
     }
+
+    // nuxt runtime
+    $config: any
   }
 }

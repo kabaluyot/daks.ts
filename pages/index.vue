@@ -93,6 +93,9 @@ export default class Index extends Vue {
 
     // mutate in vuex
     this.global_set_title('Hello from daks.ts')
+
+    // print values using runtime config
+    console.log('APP_NAME', this.$config.appName)
   }
 }
 </script>
