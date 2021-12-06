@@ -96,6 +96,9 @@ export default class Index extends Vue {
 
     // print values using runtime config
     console.log('APP_NAME', this.$config.appName)
+
+    // Toast notification
+    this.$toast.info('Hello')
   }
 }
 </script>

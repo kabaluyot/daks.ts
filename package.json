@@ -32,7 +32,8 @@
     "babel-core": "^7.0.0-bridge.0",
     "nuxt": "^2.15.4",
     "nuxt-property-decorator": "^2.7.2",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "vue-toastification": "^1.7.14"
   },
   "devDependencies": {
     "@nuxt/types": "^2.13.0",
