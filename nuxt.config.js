@@ -82,6 +82,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'vue-toastification/nuxt',
   ],
   /**
    * Public runtime configs
@@ -104,6 +105,23 @@ export default {
         Accept: 'application/json, text/plain, */*',
       },
     },
+  },
+  toast: {
+    transition: 'Vue-Toastification__fade',
+    maxToasts: 20,
+    newestOnTop: true,
+    position: 'bottom-left',
+    timeout: 5000,
+    closeOnClick: true,
+    pauseOnFocusLoss: true,
+    pauseOnHover: true,
+    draggable: false,
+    draggablePercent: 0.6,
+    showCloseButtonOnHover: true,
+    hideProgressBar: true,
+    closeButton: 'button',
+    icon: true,
+    rtl: false,
   },
   /**
    *  PWA module configuration
