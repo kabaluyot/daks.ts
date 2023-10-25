@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   ssr: true,
   target: 'static',
@@ -83,6 +85,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     'vue-toastification/nuxt',
+    '@nuxtjs/dotenv',
   ],
   /**
    * Public runtime configs
